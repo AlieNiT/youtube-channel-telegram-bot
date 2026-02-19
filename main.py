@@ -26,7 +26,7 @@ def send_audio(file_path):
 
 def download_audio(video_url):
     output = "audio.%(ext)s"
-    subprocess.run(["yt-dlp", "-x", "--audio-format", "mp3", "-o", output, video_url])
+    subprocess.run(["yt-dlp", "-x", "--audio-format", "mp3", "--cookies", "cookies.txt", "-o", output, video_url])
     return "audio.mp3"
 
 def main():
