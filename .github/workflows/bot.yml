@@ -15,6 +15,7 @@ jobs:
           python-version: "3.11"
       - run: pip install -r requirements.txt
       - run: echo "${{ secrets.YOUTUBE_COOKIES }}" > cookies.txt
+      - run: curl -fsSL https://deno.land/install.sh | sh && echo "$HOME/.deno/bin" >> $GITHUB_PATH
       - run: python main.py
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
